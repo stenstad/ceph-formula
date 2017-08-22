@@ -4,7 +4,7 @@
 {% from "ceph/map.jinja" import settings with context -%}
 
 {% set mds_name = grains['host'] %}
-{% set mds_dir = '/var/lib/ceph/mds/' ~ settings.cluster_name ~ '-' ~ mds_name %}
+{% set mds_dir = '/var/lib/ceph/mds/mds.' ~ mds_name %}
 
 ceph_config_mds_host:
   ini.options_present:
